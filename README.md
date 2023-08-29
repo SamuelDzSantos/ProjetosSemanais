@@ -1,3 +1,0 @@
-# ProjetosSemanais
-
-* Projeto Soma 
