@@ -1,4 +1,4 @@
-import { View,Text,Button } from "react-native";
+import { View,Text,Button , StyleSheet} from "react-native";
 import React from 'react';
 
 export default function CounterScreen(){
@@ -8,8 +8,14 @@ export default function CounterScreen(){
             <Button title="Incrementa"
             onPress={()=>{setCounter(counter+1)}}
             />
-            <Text>{counter}</Text>
+            <Text style={styles.counterText}>{counter}</Text>
         </View>
 
     )
 }
+
+const styles = StyleSheet.create({
+    counterText:{
+        alignSelf:"center",
+    }
+})

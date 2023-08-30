@@ -15,11 +15,12 @@ export default function App() {
     
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Home2" component={Home2} />
+      
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Home2" component={Home2} />
+        <Stack.Screen name="Form" component={Form} />
         <Stack.Screen name="Color" component={ColorList} />
         <Stack.Screen name="Counter" component={CounterScreen} />
-        <Stack.Screen name="Form" component={Form} />
       </Stack.Navigator>
     </NavigationContainer>
   

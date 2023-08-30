@@ -1,5 +1,6 @@
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import Result from './Result';
+import globalStyles from './styles';
 import { useState } from 'react';
 export default function Form() {
     const [nota1, setNota1] = useState(null);
@@ -16,10 +17,11 @@ export default function Form() {
         }
     }
     return (
-        <View>
-            <Text>Nota 1</Text>
+        <View style={styles.container}>
+            <View style={styles.inputContainer}>
+            <Text style={globalStyles.inputLabel} >Nota 1</Text>
             <TextInput
-                style={styles.input}
+                style={globalStyles.input}
                 onChangeText={(texto)=>{
                     setNota1(texto);
                     
@@ -27,9 +29,9 @@ export default function Form() {
                 value={nota1}
                 placeholder='Ex 5.30'
                 keyboardType='numeric' />
-            <Text>Nota 2</Text>
+            <Text style={globalStyles.inputLabel}>Nota 2</Text>
             <TextInput
-                style={styles.input}
+                style={globalStyles.input}
                 onChangeText={(texto) => {
                     setNota2(texto);
                 }}
@@ -46,12 +48,26 @@ export default function Form() {
                 }}
                 title="Calcular Media" />
             <Result message={mensagem} resultMedia={media} />
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    input: {
-        padding: 4,
-    }
+    inputContainer:{
+        marginTop:100,
+        justifyContent:"center",
+        flexDirection:"column",
+        alignItems:"center",
+        height:400,
+        width:400,
+        borderRadius:50,
+        backgroundColor: "#a2a5a8",
+        },
+   container:{
+    justifyContent:"center",
+    alignItems:"center",
+   }
+
 })
+

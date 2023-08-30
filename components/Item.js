@@ -1,18 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import {View,Text, StyleSheet} from 'react-native';
+import {View,Text, StyleSheet,Image} from 'react-native';
 
 
 
-export default function Item({title}){
-    function createColor(){
-        const r = Math.floor(Math.random() * 255);
-        const g = Math.floor(Math.random() * 255);
-        const b = Math.floor(Math.random() * 255);
-        return `rgb(${r},${g},${b})`
+export default function Item(source){
+    
+    function getHeightAndWidth(){
+        return [(Math.random()*200)+150,(Math.random()*200)+150]
     }
+    let values = getHeightAndWidth();
     return(
-        <View style={styles.item(createColor())}>
-            <Text style={styles.title}>{title}</Text>
+        <View style={[styles.dataElement(values)]} >
+            <Image 
+            source={source.title}
+            resizeMode="stretch"
+            style={styles.dataElement(values)
+            }
+            />
         </View>
     )
 }
@@ -22,13 +26,13 @@ const styles = StyleSheet.create({
         flex:1,
         marginTop:StatusBar.currentHeight || 0,
     },
-
     item: (color) => ({
-        height:100,
-        width:"100%",
+        margin:20,
         backgroundColor: color,
     }),
-    title:{
-
-    }
+    dataElement : ([height,width]) =>({
+        height:height,
+        width:width,
+        margin:20,
+    })
 })
