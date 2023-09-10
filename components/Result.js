@@ -1,4 +1,4 @@
-import { View, Text ,StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function Result(props) {
     return (
@@ -10,15 +10,15 @@ export default function Result(props) {
 }
 
 const styles = StyleSheet.create({
-    resultContainer:{
-        color:"black",
-        flexDirection:"row",
-        marginTop:10,
+    resultContainer: {
+        color: "black",
+        flexDirection: "row",
+        marginTop: 10,
     },
-    resultText:{
-        fontSize:22,
-        fontWeight:20,
-        color:"white",
+    resultText: {
+        fontSize: 22,
+        fontWeight: "bold",
+        color: "white",
     }
 
 })
